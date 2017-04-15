@@ -3,6 +3,7 @@ package com.ssuhanov;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        GameStart gameStart = new GameStart("exit");
+        gameStart.startGame();
     }
 }
