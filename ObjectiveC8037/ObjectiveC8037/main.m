@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameStart.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        GameStart *gameStart = [[GameStart alloc] initWithExitWord:@"exit"];
+        [gameStart startGame];
+        
     }
     return 0;
 }
