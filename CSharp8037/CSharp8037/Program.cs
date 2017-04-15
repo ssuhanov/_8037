@@ -6,7 +6,8 @@ namespace CSharp8037
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello, World!");
+			GameStart gameStart = new GameStart("exit");
+			gameStart.startGame();
 		}
 	}
 }
