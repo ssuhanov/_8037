@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B282735C1EA209D300D50C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B282735B1EA209D300D50C86 /* main.m */; };
+		B28273661EA21D3000D50C86 /* GameStart.m in Sources */ = {isa = PBXBuildFile; fileRef = B28273651EA21D3000D50C86 /* GameStart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		B28273581EA209D300D50C86 /* ObjectiveC8037 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveC8037; sourceTree = BUILT_PRODUCTS_DIR; };
 		B282735B1EA209D300D50C86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B28273641EA21D3000D50C86 /* GameStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStart.h; sourceTree = "<group>"; };
+		B28273651EA21D3000D50C86 /* GameStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				B282735B1EA209D300D50C86 /* main.m */,
+				B28273641EA21D3000D50C86 /* GameStart.h */,
+				B28273651EA21D3000D50C86 /* GameStart.m */,
 			);
 			path = ObjectiveC8037;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28273661EA21D3000D50C86 /* GameStart.m in Sources */,
 				B282735C1EA209D300D50C86 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +257,7 @@
 				B28273611EA209D300D50C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
