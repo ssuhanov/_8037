@@ -8,5 +8,5 @@
 
 import Foundation
 
-let gameStart = GameStart(with: "exit")
+let gameStart = GameStart(with: "quit")
 gameStart.startGame()
