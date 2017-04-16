@@ -5,9 +5,9 @@ package com.ssuhanov;
  */
 public class GameStart {
 
-    static String GreetingMessage = "Please enter your answer (enter \"%s\" for exit):";
-    static String InputAcceptMessage = "You entered \"%s\".\n";
-    static String GoodByeMessage = "Good bye.\n";
+    static final String GreetingMessage = "Please enter your answer (enter \"%s\" for exit):";
+    static final String InputAcceptMessage = "You entered \"%s\".\n";
+    static final String GoodByeMessage = "Good bye.\n";
     
     String exitWord;
 
@@ -16,18 +16,18 @@ public class GameStart {
     }
 
     public void startGame() {
-        System.out.println(String.format(GameStart.GreetingMessage, this.exitWord));
+        System.out.println(String.format(GreetingMessage, exitWord));
         String inputWord = readLine();
 
         checkInputWord(inputWord);
     }
 
     void checkInputWord(String inputWord) {
-        if (inputWord.equals(this.exitWord)) {
-            System.out.println(GameStart.GoodByeMessage);
+        if (inputWord.equals(exitWord)) {
+            System.out.println(GoodByeMessage);
         } else {
-            System.out.println(String.format(GameStart.InputAcceptMessage, inputWord));
-            this.startGame();
+            System.out.println(String.format(InputAcceptMessage, inputWord));
+            startGame();
         }
     }
 

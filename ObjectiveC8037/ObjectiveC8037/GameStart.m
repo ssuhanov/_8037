@@ -8,10 +8,10 @@
 
 #import "GameStart.h"
 
-NSString *GreetingMessage = @"Please enter your answer (enter \"%@\" for exit):";
-NSString *InputAcceptMessage = @"You entered \"%@\".\n";
-NSString *GoodByeMessage = @"Good bye.\n";
-NSString *ErrorMessage = @"There is unknown error, sorry. Good bye.\n";
+const NSString *GreetingMessage = @"Please enter your answer (enter \"%@\" for exit):";
+const NSString *InputAcceptMessage = @"You entered \"%@\".\n";
+const NSString *GoodByeMessage = @"Good bye.\n";
+const NSString *ErrorMessage = @"There is unknown error, sorry. Good bye.\n";
 
 @interface GameStart()
 
