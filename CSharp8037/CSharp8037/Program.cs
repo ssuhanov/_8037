@@ -6,7 +6,7 @@ namespace CSharp8037
 	{
 		public static void Main(string[] args)
 		{
-			GameStart gameStart = new GameStart("exit");
+			GameStart gameStart = new GameStart("quit");
 			gameStart.startGame();
 		}
 	}

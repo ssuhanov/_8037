@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        GameStart *gameStart = [[GameStart alloc] initWithExitWord:@"exit"];
+        GameStart *gameStart = [[GameStart alloc] initWithExitWord:@"quit"];
         [gameStart startGame];
         
     }
