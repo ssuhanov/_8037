@@ -15,7 +15,7 @@ public class Randomizer {
     int fourthNumber;
 
     public Randomizer() {
-        firstNumber = random.nextInt(9) + 1;
+        firstNumber = random.nextInt(10);
         secondNumber = random.nextInt(10);
         thirdNumber = random.nextInt(10);
         fourthNumber = random.nextInt(10);

@@ -13,7 +13,7 @@ namespace CSharp8037
 
 		public Randomizer()
 		{
-			firstNumber = random.Next(1, 10);
+			firstNumber = random.Next(10);
 			secondNumber = random.Next(10);
 			thirdNumber = random.Next(10);
 			fourthNumber = random.Next(10);
