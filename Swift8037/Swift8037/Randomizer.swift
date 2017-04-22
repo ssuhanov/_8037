@@ -16,7 +16,7 @@ class Randomizer {
     var fourthNumber: UInt32
     
     init() {
-        self.firstNumber = arc4random() % 9 + 1
+        self.firstNumber = arc4random() % 10
         self.secondNumber = arc4random() % 10
         self.thirdNumber = arc4random() % 10
         self.fourthNumber = arc4random() % 10
