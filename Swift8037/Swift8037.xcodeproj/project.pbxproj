@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B28273491EA2098E00D50C86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28273481EA2098E00D50C86 /* main.swift */; };
 		B28273631EA21A5D00D50C86 /* GameStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28273621EA21A5D00D50C86 /* GameStart.swift */; };
+		B2D5894F1EABC6940050DD25 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5894E1EABC6940050DD25 /* Randomizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		B28273451EA2098E00D50C86 /* Swift8037 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Swift8037; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28273481EA2098E00D50C86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B28273621EA21A5D00D50C86 /* GameStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStart.swift; sourceTree = "<group>"; };
+		B2D5894E1EABC6940050DD25 /* Randomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				B28273481EA2098E00D50C86 /* main.swift */,
 				B28273621EA21A5D00D50C86 /* GameStart.swift */,
+				B2D5894E1EABC6940050DD25 /* Randomizer.swift */,
 			);
 			path = Swift8037;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28273631EA21A5D00D50C86 /* GameStart.swift in Sources */,
+				B2D5894F1EABC6940050DD25 /* Randomizer.swift in Sources */,
 				B28273491EA2098E00D50C86 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
