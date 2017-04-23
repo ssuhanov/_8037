@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B239CC7B1EACAB6A00C8E351 /* Game8037.m in Sources */ = {isa = PBXBuildFile; fileRef = B239CC7A1EACAB6A00C8E351 /* Game8037.m */; };
 		B282735C1EA209D300D50C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B282735B1EA209D300D50C86 /* main.m */; };
 		B28273661EA21D3000D50C86 /* GameStart.m in Sources */ = {isa = PBXBuildFile; fileRef = B28273651EA21D3000D50C86 /* GameStart.m */; };
 		B2D589521EABC8980050DD25 /* Randomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D589511EABC8980050DD25 /* Randomizer.m */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B239CC791EACAB6A00C8E351 /* Game8037.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game8037.h; sourceTree = "<group>"; };
+		B239CC7A1EACAB6A00C8E351 /* Game8037.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game8037.m; sourceTree = "<group>"; };
 		B28273581EA209D300D50C86 /* ObjectiveC8037 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveC8037; sourceTree = BUILT_PRODUCTS_DIR; };
 		B282735B1EA209D300D50C86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B28273641EA21D3000D50C86 /* GameStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStart.h; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				B2D589501EABC8980050DD25 /* Randomizer.h */,
 				B2D589511EABC8980050DD25 /* Randomizer.m */,
 				B2D589551EAC94F70050DD25 /* Game.h */,
+				B239CC791EACAB6A00C8E351 /* Game8037.h */,
+				B239CC7A1EACAB6A00C8E351 /* Game8037.m */,
 			);
 			path = ObjectiveC8037;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28273661EA21D3000D50C86 /* GameStart.m in Sources */,
+				B239CC7B1EACAB6A00C8E351 /* Game8037.m in Sources */,
 				B2D589521EABC8980050DD25 /* Randomizer.m in Sources */,
 				B282735C1EA209D300D50C86 /* main.m in Sources */,
 			);
