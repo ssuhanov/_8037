@@ -31,6 +31,7 @@
 		B28273651EA21D3000D50C86 /* GameStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStart.m; sourceTree = "<group>"; };
 		B2D589501EABC8980050DD25 /* Randomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Randomizer.h; sourceTree = "<group>"; };
 		B2D589511EABC8980050DD25 /* Randomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Randomizer.m; sourceTree = "<group>"; };
+		B2D589551EAC94F70050DD25 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				B28273651EA21D3000D50C86 /* GameStart.m */,
 				B2D589501EABC8980050DD25 /* Randomizer.h */,
 				B2D589511EABC8980050DD25 /* Randomizer.m */,
+				B2D589551EAC94F70050DD25 /* Game.h */,
 			);
 			path = ObjectiveC8037;
 			sourceTree = "<group>";
