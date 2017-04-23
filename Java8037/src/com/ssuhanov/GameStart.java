@@ -5,24 +5,24 @@ package com.ssuhanov;
  */
 public class GameStart {
 
-    static final String GreetingMessage = "Please enter your answer (enter \"%s\" for exit):";
-    static final String InputAcceptMessage = "You entered \"%s\".\n";
-    static final String GoodByeMessage = "Good bye.\n";
+    private static final String GreetingMessage = "Please enter your answer (enter \"%s\" for exit):";
+    private static final String InputAcceptMessage = "You entered \"%s\".\n";
+    private static final String GoodByeMessage = "Good bye.\n";
     
-    String exitWord;
+    private String exitWord;
 
     public GameStart(String exitWord) {
         this.exitWord = exitWord;
     }
 
-    public void startGame() {
+    void startGame() {
         System.out.println(String.format(GreetingMessage, exitWord));
         String inputWord = readLine();
 
         checkInputWord(inputWord);
     }
 
-    void checkInputWord(String inputWord) {
+    private void checkInputWord(String inputWord) {
         if (inputWord.equals(exitWord)) {
             System.out.println(GoodByeMessage);
         } else {
@@ -31,7 +31,7 @@ public class GameStart {
         }
     }
 
-    String readLine() {
+    private String readLine() {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         return scanner.next();
     }

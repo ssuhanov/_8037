@@ -4,7 +4,7 @@ namespace CSharp8037
 {
 	public class Randomizer
 	{
-		static Random random = new Random();
+		static readonly Random random = new Random();
 
 		public int firstNumber;
 		public int secondNumber;

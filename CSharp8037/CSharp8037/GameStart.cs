@@ -8,7 +8,7 @@ namespace CSharp8037
 		const string InputAcceptMessage = "You entered \"{0}\".\n";
 		const string GoodByeMessage = "Good bye.\n";
 
-		string exitWord;
+		readonly string exitWord;
 
 		public GameStart(string exitWord)
 		{

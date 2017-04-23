@@ -18,7 +18,7 @@ private let ErrorMessage = "There is unknown error, sorry. Good bye.\n"
 
 class GameStart {
     
-    var exitWord: String
+    private var exitWord: String
     
     init(with exitWord: String) {
         self.exitWord = exitWord
