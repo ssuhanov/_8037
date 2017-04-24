@@ -37,6 +37,7 @@
     <Compile Include="GameStart.cs" />
     <Compile Include="Randomizer.cs" />
     <Compile Include="IGame.cs" />
+    <Compile Include="Game8037.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

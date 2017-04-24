@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B239CC781EACAB1A00C8E351 /* Game8037.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239CC771EACAB1A00C8E351 /* Game8037.swift */; };
 		B28273491EA2098E00D50C86 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28273481EA2098E00D50C86 /* main.swift */; };
 		B28273631EA21A5D00D50C86 /* GameStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28273621EA21A5D00D50C86 /* GameStart.swift */; };
 		B2D5894F1EABC6940050DD25 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D5894E1EABC6940050DD25 /* Randomizer.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B239CC771EACAB1A00C8E351 /* Game8037.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game8037.swift; sourceTree = "<group>"; };
 		B28273451EA2098E00D50C86 /* Swift8037 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Swift8037; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28273481EA2098E00D50C86 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B28273621EA21A5D00D50C86 /* GameStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStart.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				B28273621EA21A5D00D50C86 /* GameStart.swift */,
 				B2D5894E1EABC6940050DD25 /* Randomizer.swift */,
 				B2D589531EAC94B30050DD25 /* Game.swift */,
+				B239CC771EACAB1A00C8E351 /* Game8037.swift */,
 			);
 			path = Swift8037;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28273631EA21A5D00D50C86 /* GameStart.swift in Sources */,
+				B239CC781EACAB1A00C8E351 /* Game8037.swift in Sources */,
 				B2D5894F1EABC6940050DD25 /* Randomizer.swift in Sources */,
 				B28273491EA2098E00D50C86 /* main.swift in Sources */,
 				B2D589541EAC94B30050DD25 /* Game.swift in Sources */,
