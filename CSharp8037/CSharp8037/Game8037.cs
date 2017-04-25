@@ -24,36 +24,48 @@ namespace CSharp8037
 
 		int resultWithLevelAndRandomizer(Level level, Randomizer randomizer)
 		{
+			int result = 0;
+
 			switch (level)
 			{
 				case Level.Easy:
-					return randomizer.firstNumber + randomizer.secondNumber + randomizer.thirdNumber + randomizer.fourthNumber;
+					result = randomizer.firstNumber + randomizer.secondNumber + randomizer.thirdNumber + randomizer.fourthNumber;
+					break;
 				case Level.Normal:
-					return randomizer.firstNumber * 10 + randomizer.secondNumber + randomizer.thirdNumber * 10 + randomizer.fourthNumber;
+					result = randomizer.firstNumber * 10 + randomizer.secondNumber + randomizer.thirdNumber * 10 + randomizer.fourthNumber;
+					break;
 				case Level.Hard1:
-					return randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+					result = randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+					break;
 				case Level.Hard2:
-					return (randomizer.firstNumber * 10 + randomizer.secondNumber) * (randomizer.thirdNumber * 10 + randomizer.fourthNumber);
-				default:
-					return 0;
+					result = (randomizer.firstNumber * 10 + randomizer.secondNumber) * (randomizer.thirdNumber * 10 + randomizer.fourthNumber);
+					break;
 			}
+
+			return result;
 		}
 
 		string descriptionOfLevel(Level level)
 		{
+			string result = "";
+
 			switch (level)
 			{
 				case Level.Easy:
-					return "easy";
+					result = "easy";
+					break;
 				case Level.Normal:
-					return "normal";
+					result = "normal";
+					break;
 				case Level.Hard1:
-					return "hard1";
+					result = "hard1";
+					break;
 				case Level.Hard2:
-					return "hard2";
-				default:
-					return "";
+					result = "hard2";
+					break;
 			}
+
+			return result;
 		}
 
 		public void greet(string exitWord)
