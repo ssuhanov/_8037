@@ -44,18 +44,24 @@ public class Game8037 implements Game {
     }
 
     private int resultWithLevelAndRandomizer(Level level, Randomizer randomizer) {
+        int result = 0;
+
         switch (level) {
             case Easy:
-                return randomizer.firstNumber + randomizer.secondNumber + randomizer.thirdNumber + randomizer.fourthNumber;
+                result = randomizer.firstNumber + randomizer.secondNumber + randomizer.thirdNumber + randomizer.fourthNumber;
+                break;
             case Normal:
-                return randomizer.firstNumber*10 + randomizer.secondNumber + randomizer.thirdNumber*10 + randomizer.fourthNumber;
+                result = randomizer.firstNumber*10 + randomizer.secondNumber + randomizer.thirdNumber*10 + randomizer.fourthNumber;
+                break;
             case Hard1:
-                return randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+                result = randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+                break;
             case Hard2:
-                return (randomizer.firstNumber*10 + randomizer.secondNumber) * (randomizer.thirdNumber*10 + randomizer.fourthNumber);
-            default:
-                return 0;
+                result = (randomizer.firstNumber*10 + randomizer.secondNumber) * (randomizer.thirdNumber*10 + randomizer.fourthNumber);
+                break;
         }
+
+        return result;
     }
 
     @Override

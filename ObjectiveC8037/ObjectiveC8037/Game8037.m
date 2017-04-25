@@ -43,29 +43,45 @@ typedef enum {
 }
 
 - (NSInteger)resultWithLevel:(Level)level andRandomizer:(Randomizer *)randomizer {
+    NSInteger result = 0;
+    
     switch (level) {
         case LevelEasy:
-            return randomizer.firstNumber + randomizer.secondNumber + randomizer.thirdNumber + randomizer.fourthNumber;
+            result = randomizer.firstNumber + randomizer.secondNumber + randomizer.thirdNumber + randomizer.fourthNumber;
+            break;
         case LevelNormal:
-            return randomizer.firstNumber*10 + randomizer.secondNumber + randomizer.thirdNumber*10 + randomizer.fourthNumber;
+            result = randomizer.firstNumber*10 + randomizer.secondNumber + randomizer.thirdNumber*10 + randomizer.fourthNumber;
+            break;
         case LevelHard1:
-            return randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+            result = randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+            break;
         case LevelHard2:
-            return (randomizer.firstNumber*10 + randomizer.secondNumber) * (randomizer.thirdNumber*10 + randomizer.fourthNumber);
+            result = (randomizer.firstNumber*10 + randomizer.secondNumber) * (randomizer.thirdNumber*10 + randomizer.fourthNumber);
+            break;
     }
+    
+    return result;
 }
 
 - (NSString *)descriptionOfLevel:(Level)level {
+    NSString *result = @"";
+    
     switch (level) {
         case LevelEasy:
-            return @"easy";
+            result = @"easy";
+            break;
         case LevelNormal:
-            return @"normal";
+            result = @"normal";
+            break;
         case LevelHard1:
-            return @"hard1";
+            result = @"hard1";
+            break;
         case LevelHard2:
-            return @"hard2";
+            result = @"hard2";
+            break;
     }
+    
+    return result;
 }
 
 #pragma mark - Game
