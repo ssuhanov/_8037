@@ -29,6 +29,7 @@ private let BaseGreeting = "\(FirstNumberPlaceholder) \(SecondNumberPlaceholder)
 private let TaskMessage = "The next task is \(TaskPlaceholder)\n(enter \"\(ExitWordPlaceholder)\" for exit)"
 private let CorrectMessage = "Absolutely right.\n"
 private let WrongMessage = "Sorry, you made a mistake. Try again.\n"
+private let ErrorLevelMessage = "Sorry, you have selected wrong level. Good bye.\n"
 
 class Game8037: Game {
     
@@ -75,6 +76,7 @@ class Game8037: Game {
         case Hard2LevelNumber, Level.hard2.rawValue:
             self.level = .hard2
         default:
+            print(ErrorLevelMessage)
             return nil
         }
     }
