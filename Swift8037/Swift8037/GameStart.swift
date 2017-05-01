@@ -14,7 +14,6 @@ private let InputWordPlaceholder = "{inputWord}"
 private let GreetingMessage = "Please enter your answer (enter \"\(ExitWordPlaceholder)\" for exit):"
 private let InputAcceptMessage = "You entered \"\(InputWordPlaceholder)\".\n"
 private let GoodByeMessage = "Good bye.\n"
-private let ErrorMessage = "There is unknown error, sorry. Good bye.\n"
 
 class GameStart {
     
@@ -25,22 +24,17 @@ class GameStart {
     }
     
     func startGame() {
-        print(GreetingMessage.replacingOccurrences(of: ExitWordPlaceholder, with: self.exitWord))
-        guard let inputWord = readLine() else {
-            print(ErrorMessage)
-            return
-        }
-        
-        self.check(inputWord: inputWord)
+        var inputWord: String
+        repeat {
+            print(GreetingMessage.replacingOccurrences(of: ExitWordPlaceholder, with: self.exitWord))
+            inputWord = readLine() ?? ""
+        } while check(inputWord: inputWord)
     }
     
-    private func check(inputWord: String) {
-        if inputWord == self.exitWord {
-            print(GoodByeMessage)
-        } else {
-            print(InputAcceptMessage.replacingOccurrences(of: InputWordPlaceholder, with: inputWord))
-            startGame()
-        }
+    private func check(inputWord: String) -> Bool {
+        let isExitWord = (inputWord == self.exitWord)
+        print(isExitWord ? GoodByeMessage : InputAcceptMessage.replacingOccurrences(of: InputWordPlaceholder, with: inputWord))
+        return !isExitWord
     }
     
 }

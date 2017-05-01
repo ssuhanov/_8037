@@ -16,19 +16,18 @@ public class GameStart {
     }
 
     void startGame() {
-        System.out.println(String.format(GreetingMessage, exitWord));
-        String inputWord = readLine();
+        String inputWord;
 
-        checkInputWord(inputWord);
+        do {
+            System.out.println(String.format(GreetingMessage, exitWord));
+            inputWord = readLine();
+        } while (checkInputWord(inputWord));
     }
 
-    private void checkInputWord(String inputWord) {
-        if (inputWord.equals(exitWord)) {
-            System.out.println(GoodByeMessage);
-        } else {
-            System.out.println(String.format(InputAcceptMessage, inputWord));
-            startGame();
-        }
+    private boolean checkInputWord(String inputWord) {
+        boolean isExitWord = inputWord.equals(exitWord);
+        System.out.println(isExitWord ? GoodByeMessage : String.format(InputAcceptMessage, inputWord));
+        return !isExitWord;
     }
 
     private String readLine() {
