@@ -11,17 +11,14 @@ import Foundation
 private let LevelsPlaceholder = "{levels}"
 private let LevelNumberPlaceholder = "{levelNumber}"
 private let LevelPlaceholder = "{level}"
+
 private let FirstNumberPlaceholder = "{firstNumber}"
 private let SecondNumberPlaceholder = "{secondNumber}"
 private let ThirdNumberPlaceholder = "{thirdNumber}"
 private let FourthNumberPlaceholder = "{fourthNumber}"
+
 private let ExitWordPlaceholder = "{exitWord}"
 private let TaskPlaceholder = "{taskPlaceholder}"
-
-private let EasyLevelNumber = "1"
-private let NormalLevelNumber = "2"
-private let Hard1LevelNumber = "3"
-private let Hard2LevelNumber = "4"
 
 private let StartGreeting = "Hello, let's play. Please select difficulty level:\(LevelsPlaceholder)"
 private let LevelForSelect = "\n\(LevelNumberPlaceholder) - \(LevelPlaceholder)"
@@ -40,20 +37,8 @@ class Game8037: Game {
         case hard2
         
         func forSelect() -> String {
-            let levelNumber: String
-            switch self {
-            case .easy:
-                levelNumber = EasyLevelNumber
-            case .normal:
-                levelNumber = NormalLevelNumber
-            case .hard1:
-                levelNumber = Hard1LevelNumber
-            case .hard2:
-                levelNumber = Hard2LevelNumber
-            }
-            
-            return LevelForSelect.replacingOccurrences(of: LevelNumberPlaceholder, with: levelNumber)
-                .replacingOccurrences(of: LevelPlaceholder, with: self.rawValue)
+            return LevelForSelect.replacingOccurrences(of: LevelPlaceholder, with: self.rawValue)
+                .replacingOccurrences(of: LevelNumberPlaceholder, with: "\(self.hashValue+1)")
         }
     }
     
@@ -67,13 +52,13 @@ class Game8037: Game {
         
         let selectedLevel = readLine() ?? ""
         switch selectedLevel {
-        case EasyLevelNumber, Level.easy.rawValue:
+        case "\(Level.easy.hashValue+1)", Level.easy.rawValue:
             self.level = .easy
-        case NormalLevelNumber, Level.normal.rawValue:
+        case "\(Level.normal.hashValue+1)", Level.normal.rawValue:
             self.level = .normal
-        case Hard1LevelNumber, Level.hard1.rawValue:
+        case "\(Level.hard1.hashValue+1)", Level.hard1.rawValue:
             self.level = .hard1
-        case Hard2LevelNumber, Level.hard2.rawValue:
+        case "\(Level.hard2.hashValue+1)", Level.hard2.rawValue:
             self.level = .hard2
         default:
             print(ErrorLevelMessage)
