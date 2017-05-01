@@ -11,7 +11,6 @@
 const NSString *GreetingMessage = @"Please enter your answer (enter \"%@\" for exit):";
 const NSString *InputAcceptMessage = @"You entered \"%@\".\n";
 const NSString *GoodByeMessage = @"Good bye.\n";
-const NSString *ErrorMessage = @"There is unknown error, sorry. Good bye.\n";
 
 @interface GameStart()
 
@@ -30,23 +29,18 @@ const NSString *ErrorMessage = @"There is unknown error, sorry. Good bye.\n";
 }
 
 - (void)startGame {
-    NSLog(GreetingMessage, self.exitWord);
-    NSString *inputWord = [self readLine];
+    NSString *inputWord;
     
-    if (inputWord) {
-        [self checkInputWord:inputWord];
-    } else {
-        NSLog(@"%@", ErrorMessage);
-    }
+    do {
+        NSLog(GreetingMessage, self.exitWord);
+        inputWord = [self readLine];
+    } while ([self checkInputWord:inputWord]);
 }
 
-- (void)checkInputWord:(NSString *)inputWord {
-    if ([inputWord isEqualToString:self.exitWord]) {
-        NSLog(@"%@", GoodByeMessage);
-    } else {
-        NSLog(InputAcceptMessage, inputWord);
-        [self startGame];
-    }
+- (BOOL)checkInputWord:(NSString *)inputWord {
+    BOOL isExitWord = [inputWord isEqualToString:self.exitWord];
+    isExitWord ? NSLog(@"%@", GoodByeMessage) : NSLog(InputAcceptMessage, inputWord);
+    return !isExitWord;
 }
 
 - (NSString *)readLine {

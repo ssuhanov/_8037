@@ -17,23 +17,20 @@ namespace CSharp8037
 
 		public void startGame()
 		{
-			Console.WriteLine(string.Format(GreetingMessage, exitWord));
-			string inputWord = Console.ReadLine();
-
-			checkInputWord(inputWord);
+			string inputWord;
+			do
+			{
+				Console.WriteLine(string.Format(GreetingMessage, exitWord));
+				inputWord = Console.ReadLine();
+			}
+			while (checkInputWord(inputWord));
 		}
 
-		void checkInputWord(string inputWord)
+		bool checkInputWord(string inputWord)
 		{
-			if (inputWord.Equals(exitWord))
-			{
-				Console.WriteLine(GoodByeMessage);
-			}
-			else
-			{
-				Console.WriteLine(string.Format(InputAcceptMessage, inputWord));
-				startGame();
-			}
+			bool isExitWord = inputWord.Equals(exitWord);
+			Console.WriteLine(isExitWord ? GoodByeMessage : string.Format(InputAcceptMessage, inputWord));
+			return !isExitWord;
 		}
 	}
 }
