@@ -9,11 +9,23 @@
 #import "Game8037.h"
 #import "Randomizer.h"
 
-const NSString *StartGreeting = @"Hello, let's play. Current difficulty level is %@\n";
+const NSString *EasyLevelNumber = @"1";
+const NSString *NormalLevelNumber = @"2";
+const NSString *Hard1LevelNumber = @"3";
+const NSString *Hard2LevelNumber = @"4";
+
+const NSString *EasyLevelName = @"easy";
+const NSString *NormalLevelName = @"normal";
+const NSString *Hard1LevelName = @"hard1";
+const NSString *Hard2LevelName = @"hard2";
+
+const NSString *StartGreeting = @"Hello, let's play. Please select difficulty level:%@";
+const NSString *LevelForSelect = @"\n%@ - %@";
 const NSString *BaseGreeting = @"%i %i %i %i";
 const NSString *TaskMessage = @"The next task is %@\n(enter \"%@\" for exit)";
 const NSString *CorrectMessage = @"Absolutely right.\n";
 const NSString *WrongMessage = @"Sorry, you made a mistake. Try again.\n";
+const NSString *ErrorLevelMessage = @"Sorry, you have selected wrong level. Good bye.\n";
 
 typedef enum {
     LevelEasy,
@@ -35,11 +47,55 @@ typedef enum {
 {
     self = [super init];
     if (self) {
-        self.level = LevelNormal;
         self.result = 0;
-        NSLog(StartGreeting, [self descriptionOfLevel:self.level]);
+        NSString *levels = [NSString stringWithFormat:@"%@%@%@%@",
+                            [self levelForSelect:LevelEasy],
+                            [self levelForSelect:LevelNormal],
+                            [self levelForSelect:LevelHard1],
+                            [self levelForSelect:LevelHard2]];
+        
+        NSLog(StartGreeting, levels);
+        NSString *selectedLevel = [self readLine];
+        if ([selectedLevel isEqualToString:EasyLevelNumber] || [selectedLevel isEqualToString:EasyLevelName]) {
+            self.level = LevelEasy;
+        } else if ([selectedLevel isEqualToString:NormalLevelNumber] || [selectedLevel isEqualToString:NormalLevelName]) {
+            self.level = LevelNormal;
+        } else if ([selectedLevel isEqualToString:Hard1LevelNumber] || [selectedLevel isEqualToString:Hard1LevelName]) {
+            self.level = LevelNormal;
+        } else if ([selectedLevel isEqualToString:Hard2LevelNumber] || [selectedLevel isEqualToString:Hard2LevelName]) {
+            self.level = LevelNormal;
+        } else {
+            NSLog(@"%@", ErrorLevelMessage);
+            return nil;
+        }
     }
     return self;
+}
+
+- (NSString *)levelForSelect:(Level)level {
+    NSString *levelNumber;
+    NSString *levelName;
+    
+    switch (level) {
+        case LevelEasy:
+            levelNumber = EasyLevelNumber;
+            levelName = EasyLevelName;
+            break;
+        case LevelNormal:
+            levelNumber = NormalLevelNumber;
+            levelName = NormalLevelName;
+            break;
+        case LevelHard1:
+            levelNumber = Hard1LevelNumber;
+            levelName = Hard1LevelName;
+            break;
+        case LevelHard2:
+            levelNumber = Hard2LevelNumber;
+            levelName = Hard2LevelName;
+            break;
+    }
+    
+    return [NSString stringWithFormat:LevelForSelect, levelNumber, levelName];
 }
 
 - (NSInteger)resultWithLevel:(Level)level andRandomizer:(Randomizer *)randomizer {
@@ -83,6 +139,13 @@ typedef enum {
     
     return result;
 }
+
+- (NSString *)readLine {
+    char inputValue;
+    scanf("%s", &inputValue);
+    return [NSString stringWithUTF8String:&inputValue];
+}
+
 
 #pragma mark - Game
 
