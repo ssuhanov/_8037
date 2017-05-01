@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let LevelsPlaceholder = "{levels}"
+private let LevelNumberPlaceholder = "{levelNumber}"
 private let LevelPlaceholder = "{level}"
 private let FirstNumberPlaceholder = "{firstNumber}"
 private let SecondNumberPlaceholder = "{secondNumber}"
@@ -16,7 +18,13 @@ private let FourthNumberPlaceholder = "{fourthNumber}"
 private let ExitWordPlaceholder = "{exitWord}"
 private let TaskPlaceholder = "{taskPlaceholder}"
 
-private let StartGreeting = "Hello, let's play. Current difficulty level is \(LevelPlaceholder)\n"
+private let EasyLevelNumber = "1"
+private let NormalLevelNumber = "2"
+private let Hard1LevelNumber = "3"
+private let Hard2LevelNumber = "4"
+
+private let StartGreeting = "Hello, let's play. Please select difficulty level:\(LevelsPlaceholder)"
+private let LevelForSelect = "\n\(LevelNumberPlaceholder) - \(LevelPlaceholder)"
 private let BaseGreeting = "\(FirstNumberPlaceholder) \(SecondNumberPlaceholder) \(ThirdNumberPlaceholder) \(FourthNumberPlaceholder)"
 private let TaskMessage = "The next task is \(TaskPlaceholder)\n(enter \"\(ExitWordPlaceholder)\" for exit)"
 private let CorrectMessage = "Absolutely right.\n"
@@ -29,15 +37,46 @@ class Game8037: Game {
         case normal
         case hard1
         case hard2
+        
+        func forSelect() -> String {
+            let levelNumber: String
+            switch self {
+            case .easy:
+                levelNumber = EasyLevelNumber
+            case .normal:
+                levelNumber = NormalLevelNumber
+            case .hard1:
+                levelNumber = Hard1LevelNumber
+            case .hard2:
+                levelNumber = Hard2LevelNumber
+            }
+            
+            return LevelForSelect.replacingOccurrences(of: LevelNumberPlaceholder, with: levelNumber)
+                .replacingOccurrences(of: LevelPlaceholder, with: self.rawValue)
+        }
     }
     
     private var level: Level
     private var result: UInt32
     
-    init() {
-        self.level = .normal
+    init?() {
         self.result = 0
-        print(StartGreeting.replacingOccurrences(of: LevelPlaceholder, with: self.level.rawValue))
+        let levels = Level.easy.forSelect() + Level.normal.forSelect() + Level.hard1.forSelect() + Level.hard2.forSelect()
+        print(StartGreeting.replacingOccurrences(of: LevelsPlaceholder, with: levels))
+        
+        let selectedLevel = readLine() ?? ""
+        switch selectedLevel {
+        case EasyLevelNumber, Level.easy.rawValue:
+            self.level = .easy
+        case NormalLevelNumber, Level.normal.rawValue:
+            self.level = .normal
+        case Hard1LevelNumber, Level.hard1.rawValue:
+            self.level = .hard1
+        case Hard2LevelNumber, Level.hard2.rawValue:
+            self.level = .hard2
+        default:
+            return nil
+        }
     }
     
     private func result(with level: Level, and randomizer: Randomizer) -> UInt32 {
