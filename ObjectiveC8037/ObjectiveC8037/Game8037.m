@@ -124,16 +124,16 @@ typedef enum {
     
     switch (level) {
         case LevelEasy:
-            result = @"easy";
+            result = EasyLevelName;
             break;
         case LevelNormal:
-            result = @"normal";
+            result = NormalLevelName;
             break;
         case LevelHard1:
-            result = @"hard1";
+            result = Hard1LevelName;
             break;
         case LevelHard2:
-            result = @"hard2";
+            result = Hard2LevelName;
             break;
     }
     
