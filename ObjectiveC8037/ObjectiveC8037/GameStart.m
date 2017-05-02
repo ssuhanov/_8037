@@ -7,6 +7,7 @@
 //
 
 #import "GameStart.h"
+#import "Game8037.h"
 
 const NSString *GreetingMessage = @"Please enter your answer (enter \"%@\" for exit):";
 const NSString *InputAcceptMessage = @"You entered \"%@\".\n";
@@ -15,6 +16,7 @@ const NSString *GoodByeMessage = @"Good bye.\n";
 @interface GameStart()
 
 @property (strong, nonatomic) NSString *exitWord;
+@property (strong, nonatomic) id<Game> game;
 
 @end
 
@@ -24,22 +26,29 @@ const NSString *GoodByeMessage = @"Good bye.\n";
     self = [super init];
     if (self) {
         self.exitWord = exitWord;
+        self.game = [[Game8037 alloc] init];
     }
     return self;
 }
 
 - (void)startGame {
-    NSString *inputWord;
-    
-    do {
-        NSLog(GreetingMessage, self.exitWord);
-        inputWord = [self readLine];
-    } while ([self checkInputWord:inputWord]);
+    if (self.game) {
+        NSString *inputWord;
+        
+        do {
+            [self.game greetWithExitWord:self.exitWord];
+            inputWord = [self readLine];
+        } while ([self checkInputWord:inputWord]);
+    }
 }
 
 - (BOOL)checkInputWord:(NSString *)inputWord {
     BOOL isExitWord = [inputWord isEqualToString:self.exitWord];
-    isExitWord ? NSLog(@"%@", GoodByeMessage) : NSLog(InputAcceptMessage, inputWord);
+    if (isExitWord) {
+        NSLog(@"%@", GoodByeMessage);
+    } else {
+        [self.game checkUserAnswer:inputWord];
+    }
     return !isExitWord;
 }
 
