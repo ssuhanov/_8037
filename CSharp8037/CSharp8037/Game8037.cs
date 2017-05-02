@@ -109,7 +109,11 @@ namespace CSharp8037
 					result = randomizer.firstNumber * 10 + randomizer.secondNumber + randomizer.thirdNumber * 10 + randomizer.fourthNumber;
 					break;
 				case Level.Hard1:
-					result = randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+					int firstNumber = (randomizer.firstNumber == 0) ? 1 : randomizer.firstNumber;
+					int secondNumber = (randomizer.secondNumber == 0) ? 1 : randomizer.secondNumber;
+					int thirdNumber = (randomizer.thirdNumber == 0) ? 1 : randomizer.thirdNumber;
+					int fourthNumber = (randomizer.fourthNumber == 0) ? 1 : randomizer.fourthNumber;
+					result = firstNumber* secondNumber * thirdNumber * fourthNumber;
 					break;
 				case Level.Hard2:
 					result = (randomizer.firstNumber * 10 + randomizer.secondNumber) * (randomizer.thirdNumber * 10 + randomizer.fourthNumber);

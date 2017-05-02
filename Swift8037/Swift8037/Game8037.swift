@@ -75,7 +75,11 @@ class Game8037: Game {
         case .normal:
             result = randomizer.firstNumber*10 + randomizer.secondNumber + randomizer.thirdNumber*10 + randomizer.fourthNumber
         case .hard1:
-            result = randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber
+            let firstNumber = (randomizer.firstNumber == 0) ? 1 : randomizer.firstNumber
+            let secondNumber = (randomizer.secondNumber == 0) ? 1 : randomizer.secondNumber
+            let thirdNumber = (randomizer.thirdNumber == 0) ? 1 : randomizer.thirdNumber
+            let fourthNumber = (randomizer.fourthNumber == 0) ? 1 : randomizer.fourthNumber
+            result = firstNumber * secondNumber * thirdNumber * fourthNumber
         case .hard2:
             result = (randomizer.firstNumber*10 + randomizer.secondNumber) * (randomizer.thirdNumber*10 + randomizer.fourthNumber)
         }
