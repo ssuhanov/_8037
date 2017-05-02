@@ -18,22 +18,32 @@ private let GoodByeMessage = "Good bye.\n"
 class GameStart {
     
     private var exitWord: String
+    private var game: Game
     
-    init(with exitWord: String) {
+    init?(with exitWord: String) {
         self.exitWord = exitWord
+        if let game = Game8037() {
+            self.game = game
+        } else {
+            return nil
+        }
     }
     
     func startGame() {
         var inputWord: String
         repeat {
-            print(GreetingMessage.replacingOccurrences(of: ExitWordPlaceholder, with: self.exitWord))
+            self.game.greet(with: self.exitWord)
             inputWord = readLine() ?? ""
         } while check(inputWord: inputWord)
     }
     
     private func check(inputWord: String) -> Bool {
         let isExitWord = (inputWord == self.exitWord)
-        print(isExitWord ? GoodByeMessage : InputAcceptMessage.replacingOccurrences(of: InputWordPlaceholder, with: inputWord))
+        if isExitWord {
+            print(GoodByeMessage)
+        } else {
+            self.game.check(userAnswer: inputWord)
+        }
         return !isExitWord
     }
     

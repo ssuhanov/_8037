@@ -5,28 +5,34 @@ package com.ssuhanov;
  */
 public class GameStart {
 
-    private static final String GreetingMessage = "Please enter your answer (enter \"%s\" for exit):";
-    private static final String InputAcceptMessage = "You entered \"%s\".\n";
     private static final String GoodByeMessage = "Good bye.\n";
     
     private String exitWord;
+    private Game game;
 
     public GameStart(String exitWord) {
         this.exitWord = exitWord;
+        this.game = Game8037.Create();
     }
 
     void startGame() {
-        String inputWord;
+        if (game != null) {
+            String inputWord;
 
-        do {
-            System.out.println(String.format(GreetingMessage, exitWord));
-            inputWord = readLine();
-        } while (checkInputWord(inputWord));
+            do {
+                game.greet(exitWord);
+                inputWord = readLine();
+            } while (checkInputWord(inputWord));
+        }
     }
 
     private boolean checkInputWord(String inputWord) {
         boolean isExitWord = inputWord.equals(exitWord);
-        System.out.println(isExitWord ? GoodByeMessage : String.format(InputAcceptMessage, inputWord));
+        if (isExitWord) {
+            System.out.println(GoodByeMessage);
+        } else {
+            game.checkUserAnswer(inputWord);
+        }
         return !isExitWord;
     }
 
