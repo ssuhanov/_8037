@@ -9,27 +9,39 @@ namespace CSharp8037
 		const string GoodByeMessage = "Good bye.\n";
 
 		readonly string exitWord;
+		readonly IGame iGame;
 
 		public GameStart(string exitWord)
 		{
 			this.exitWord = exitWord;
+			iGame = Game8037.Create();
 		}
 
 		public void startGame()
 		{
-			string inputWord;
-			do
+			if (iGame != null)
 			{
-				Console.WriteLine(string.Format(GreetingMessage, exitWord));
-				inputWord = Console.ReadLine();
+				string inputWord;
+				do
+				{
+					iGame.greet(exitWord);
+					inputWord = Console.ReadLine();
+				}
+				while (checkInputWord(inputWord));
 			}
-			while (checkInputWord(inputWord));
 		}
 
 		bool checkInputWord(string inputWord)
 		{
 			bool isExitWord = inputWord.Equals(exitWord);
-			Console.WriteLine(isExitWord ? GoodByeMessage : string.Format(InputAcceptMessage, inputWord));
+			if (isExitWord)
+			{
+				Console.WriteLine(GoodByeMessage);
+			}
+			else
+			{
+				iGame.checkUserAnswer(inputWord);
+			}
 			return !isExitWord;
 		}
 	}
