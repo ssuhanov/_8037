@@ -61,9 +61,9 @@ typedef enum {
         } else if ([selectedLevel isEqualToString:NormalLevelNumber] || [selectedLevel isEqualToString:NormalLevelName]) {
             self.level = LevelNormal;
         } else if ([selectedLevel isEqualToString:Hard1LevelNumber] || [selectedLevel isEqualToString:Hard1LevelName]) {
-            self.level = LevelNormal;
+            self.level = LevelHard1;
         } else if ([selectedLevel isEqualToString:Hard2LevelNumber] || [selectedLevel isEqualToString:Hard2LevelName]) {
-            self.level = LevelNormal;
+            self.level = LevelHard2;
         } else {
             NSLog(@"%@", ErrorLevelMessage);
             return nil;
@@ -109,7 +109,7 @@ typedef enum {
             result = randomizer.firstNumber*10 + randomizer.secondNumber + randomizer.thirdNumber*10 + randomizer.fourthNumber;
             break;
         case LevelHard1:
-            result = randomizer.firstNumber * randomizer.secondNumber * randomizer.thirdNumber * randomizer.fourthNumber;
+            result = (randomizer.firstNumber == 0 ? 1 : randomizer.firstNumber) * (randomizer.secondNumber == 0 ? 1 : randomizer.secondNumber) * (randomizer.thirdNumber == 0 ? 1 : randomizer.thirdNumber) * (randomizer.fourthNumber == 0 ? 1 : randomizer.fourthNumber);
             break;
         case LevelHard2:
             result = (randomizer.firstNumber*10 + randomizer.secondNumber) * (randomizer.thirdNumber*10 + randomizer.fourthNumber);
